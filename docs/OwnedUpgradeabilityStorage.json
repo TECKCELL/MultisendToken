@@ -1,0 +1,353 @@
+{
+  "contractName": "OwnedUpgradeabilityStorage",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "implementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "upgradeabilityOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"implementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"upgradeabilityOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"This is the storage necessary to perform upgradeable contracts. This means, required state variables for upgradeability purpose and eternal storage per se.\",\"methods\":{\"implementation()\":{\"details\":\"Tells the address of the current implementation\",\"return\":\"address of the current implementation\"},\"upgradeabilityOwner()\":{\"details\":\"Tells the address of the owner\",\"return\":\"the address of the owner\"},\"version()\":{\"details\":\"Tells the version name of the current implementation\",\"return\":\"string representing the name of the current version\"}},\"title\":\"OwnedUpgradeabilityStorage\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ingmedical16/04v/contracts/dev/OwnedUpgradeabilityStorage.sol\":\"OwnedUpgradeabilityStorage\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ingmedical16/04v/contracts/dev/EternalStorage.sol\":{\"keccak256\":\"0xbbcd760767bc3fe71784b849a2e5efbf2c73c4810f3e8118e4dd08ea2abb6315\",\"urls\":[\"bzz-raw://092bedc6db2010a8f3c0b5401fc16ac9c6d993d38abbe46fc7b613976de306c1\",\"dweb:/ipfs/QmNx9rC6mAwyBgvF6ZWEfVsrL8cFV3xCiUwH2AzbU2aPE8\"]},\"/home/ingmedical16/04v/contracts/dev/OwnedUpgradeabilityStorage.sol\":{\"keccak256\":\"0x0df7d055ccb824727675513f2ba887737a564b23365548024cf683584b0dbec6\",\"urls\":[\"bzz-raw://8f59317c7ec78087b5ad0036562c9bf28e926abbdb9b1caf410f55581670726a\",\"dweb:/ipfs/QmamPEzbCwbTcKFY4vnPr8i1nZ9WzF5xG6Gd79NTgzPr84\"]},\"/home/ingmedical16/04v/contracts/dev/UpgradeabilityOwnerStorage.sol\":{\"keccak256\":\"0xed2128a52c4ae851eb9a718da62b1bb6d8e3d0842bc7d318bff87c5493211d09\",\"urls\":[\"bzz-raw://7b044fbdcde4824fb1ed67b36b20136e8d70e2a9962e2d95b175f0b8c9772b75\",\"dweb:/ipfs/QmU6ig9HSr38oNbMCpWfGYbLJzpctiGgXQGH7MCCvwntjc\"]},\"/home/ingmedical16/04v/contracts/dev/UpgradeabilityStorage.sol\":{\"keccak256\":\"0x9a07252e85494abcf394d15b3585a94e9aad2c02f2f4bbd7b035fde4fa33b4c4\",\"urls\":[\"bzz-raw://2dcda70fe326bfd87df4978a02888f7adc33d337fdacf49d46a5190de438d173\",\"dweb:/ipfs/QmVftqLDAqJXH9ZENBNPCCRfdo43UPF7XczV4gQpsM9NHS\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506101d7806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806354fd4d50146100465780635c60da1b146100c35780636fde8202146100e7575b600080fd5b61004e6100ef565b6040805160208082528351818301528351919283929083019185019080838360005b83811015610088578181015183820152602001610070565b50505050905090810190601f1680156100b55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100cb610184565b604080516001600160a01b039092168252519081900360200190f35b6100cb610193565b60018054604080516020601f6002600019610100878916150201909516949094049384018190048102820181019092528281526060939092909183018282801561017a5780601f1061014f5761010080835404028352916020019161017a565b820191906000526020600020905b81548152906001019060200180831161015d57829003601f168201915b5050505050905090565b6002546001600160a01b031690565b6000546001600160a01b03169056fea265627a7a723158205a30b1752b1ac6b2fe3e2497e542bf94f1118d066010819bd4c764d3745dbe3364736f6c634300050c0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806354fd4d50146100465780635c60da1b146100c35780636fde8202146100e7575b600080fd5b61004e6100ef565b6040805160208082528351818301528351919283929083019185019080838360005b83811015610088578181015183820152602001610070565b50505050905090810190601f1680156100b55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100cb610184565b604080516001600160a01b039092168252519081900360200190f35b6100cb610193565b60018054604080516020601f6002600019610100878916150201909516949094049384018190048102820181019092528281526060939092909183018282801561017a5780601f1061014f5761010080835404028352916020019161017a565b820191906000526020600020905b81548152906001019060200180831161015d57829003601f168201915b5050505050905090565b6002546001600160a01b031690565b6000546001600160a01b03169056fea265627a7a723158205a30b1752b1ac6b2fe3e2497e542bf94f1118d066010819bd4c764d3745dbe3364736f6c634300050c0032",
+  "sourceMap": "351:107:15:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;351:107:15;;;;;;;",
+  "deployedSourceMap": "351:107:15:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;351:107:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;510:87:21;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;510:87:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;729:95;;;:::i;:::-;;;;-1:-1:-1;;;;;729:95:21;;;;;;;;;;;;;;341:105:19;;;:::i;510:87:21:-;582:8;575:15;;;;;;;;-1:-1:-1;;575:15:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;550:13;;575:15;;582:8;;575:15;;582:8;575:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;510:87;:::o;729:95::-;802:15;;-1:-1:-1;;;;;802:15:21;729:95;:::o;341:105:19:-;393:7;419:20;-1:-1:-1;;;;;419:20:19;341:105;:::o",
+  "source": "pragma solidity 0.5.12;\n\nimport \"./EternalStorage.sol\";\nimport \"./UpgradeabilityStorage.sol\";\nimport \"./UpgradeabilityOwnerStorage.sol\";\n\n\n/**\n * @title OwnedUpgradeabilityStorage\n * @dev This is the storage necessary to perform upgradeable contracts.\n * This means, required state variables for upgradeability purpose and eternal storage per se.\n */\ncontract OwnedUpgradeabilityStorage is UpgradeabilityOwnerStorage, UpgradeabilityStorage, EternalStorage {}\n",
+  "sourcePath": "/home/ingmedical16/04v/contracts/dev/OwnedUpgradeabilityStorage.sol",
+  "ast": {
+    "absolutePath": "/home/ingmedical16/04v/contracts/dev/OwnedUpgradeabilityStorage.sol",
+    "exportedSymbols": {
+      "OwnedUpgradeabilityStorage": [
+        3129
+      ]
+    },
+    "id": 3130,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3119,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:15"
+      },
+      {
+        "absolutePath": "/home/ingmedical16/04v/contracts/dev/EternalStorage.sol",
+        "file": "./EternalStorage.sol",
+        "id": 3120,
+        "nodeType": "ImportDirective",
+        "scope": 3130,
+        "sourceUnit": 2757,
+        "src": "25:30:15",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/ingmedical16/04v/contracts/dev/UpgradeabilityStorage.sol",
+        "file": "./UpgradeabilityStorage.sol",
+        "id": 3121,
+        "nodeType": "ImportDirective",
+        "scope": 3130,
+        "sourceUnit": 3593,
+        "src": "56:37:15",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/ingmedical16/04v/contracts/dev/UpgradeabilityOwnerStorage.sol",
+        "file": "./UpgradeabilityOwnerStorage.sol",
+        "id": 3122,
+        "nodeType": "ImportDirective",
+        "scope": 3130,
+        "sourceUnit": 3528,
+        "src": "94:42:15",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 3123,
+              "name": "UpgradeabilityOwnerStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3527,
+              "src": "390:26:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UpgradeabilityOwnerStorage_$3527",
+                "typeString": "contract UpgradeabilityOwnerStorage"
+              }
+            },
+            "id": 3124,
+            "nodeType": "InheritanceSpecifier",
+            "src": "390:26:15"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 3125,
+              "name": "UpgradeabilityStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3592,
+              "src": "418:21:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UpgradeabilityStorage_$3592",
+                "typeString": "contract UpgradeabilityStorage"
+              }
+            },
+            "id": 3126,
+            "nodeType": "InheritanceSpecifier",
+            "src": "418:21:15"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 3127,
+              "name": "EternalStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2756,
+              "src": "441:14:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_EternalStorage_$2756",
+                "typeString": "contract EternalStorage"
+              }
+            },
+            "id": 3128,
+            "nodeType": "InheritanceSpecifier",
+            "src": "441:14:15"
+          }
+        ],
+        "contractDependencies": [
+          2756,
+          3527,
+          3592
+        ],
+        "contractKind": "contract",
+        "documentation": "@title OwnedUpgradeabilityStorage\n@dev This is the storage necessary to perform upgradeable contracts.\nThis means, required state variables for upgradeability purpose and eternal storage per se.",
+        "fullyImplemented": true,
+        "id": 3129,
+        "linearizedBaseContracts": [
+          3129,
+          2756,
+          3592,
+          3527
+        ],
+        "name": "OwnedUpgradeabilityStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3130,
+        "src": "351:107:15"
+      }
+    ],
+    "src": "0:459:15"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/ingmedical16/04v/contracts/dev/OwnedUpgradeabilityStorage.sol",
+    "exportedSymbols": {
+      "OwnedUpgradeabilityStorage": [
+        3129
+      ]
+    },
+    "id": 3130,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3119,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:15"
+      },
+      {
+        "absolutePath": "/home/ingmedical16/04v/contracts/dev/EternalStorage.sol",
+        "file": "./EternalStorage.sol",
+        "id": 3120,
+        "nodeType": "ImportDirective",
+        "scope": 3130,
+        "sourceUnit": 2757,
+        "src": "25:30:15",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/ingmedical16/04v/contracts/dev/UpgradeabilityStorage.sol",
+        "file": "./UpgradeabilityStorage.sol",
+        "id": 3121,
+        "nodeType": "ImportDirective",
+        "scope": 3130,
+        "sourceUnit": 3593,
+        "src": "56:37:15",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/ingmedical16/04v/contracts/dev/UpgradeabilityOwnerStorage.sol",
+        "file": "./UpgradeabilityOwnerStorage.sol",
+        "id": 3122,
+        "nodeType": "ImportDirective",
+        "scope": 3130,
+        "sourceUnit": 3528,
+        "src": "94:42:15",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 3123,
+              "name": "UpgradeabilityOwnerStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3527,
+              "src": "390:26:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UpgradeabilityOwnerStorage_$3527",
+                "typeString": "contract UpgradeabilityOwnerStorage"
+              }
+            },
+            "id": 3124,
+            "nodeType": "InheritanceSpecifier",
+            "src": "390:26:15"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 3125,
+              "name": "UpgradeabilityStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3592,
+              "src": "418:21:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UpgradeabilityStorage_$3592",
+                "typeString": "contract UpgradeabilityStorage"
+              }
+            },
+            "id": 3126,
+            "nodeType": "InheritanceSpecifier",
+            "src": "418:21:15"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 3127,
+              "name": "EternalStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2756,
+              "src": "441:14:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_EternalStorage_$2756",
+                "typeString": "contract EternalStorage"
+              }
+            },
+            "id": 3128,
+            "nodeType": "InheritanceSpecifier",
+            "src": "441:14:15"
+          }
+        ],
+        "contractDependencies": [
+          2756,
+          3527,
+          3592
+        ],
+        "contractKind": "contract",
+        "documentation": "@title OwnedUpgradeabilityStorage\n@dev This is the storage necessary to perform upgradeable contracts.\nThis means, required state variables for upgradeability purpose and eternal storage per se.",
+        "fullyImplemented": true,
+        "id": 3129,
+        "linearizedBaseContracts": [
+          3129,
+          2756,
+          3592,
+          3527
+        ],
+        "name": "OwnedUpgradeabilityStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3130,
+        "src": "351:107:15"
+      }
+    ],
+    "src": "0:459:15"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.19",
+  "updatedAt": "2020-01-05T17:15:31.391Z",
+  "devdoc": {
+    "details": "This is the storage necessary to perform upgradeable contracts. This means, required state variables for upgradeability purpose and eternal storage per se.",
+    "methods": {
+      "implementation()": {
+        "details": "Tells the address of the current implementation",
+        "return": "address of the current implementation"
+      },
+      "upgradeabilityOwner()": {
+        "details": "Tells the address of the owner",
+        "return": "the address of the owner"
+      },
+      "version()": {
+        "details": "Tells the version name of the current implementation",
+        "return": "string representing the name of the current version"
+      }
+    },
+    "title": "OwnedUpgradeabilityStorage"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

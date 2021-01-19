@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Optimisation de Gas Test</title>
+  <link rel="icon" href="images/webiz-logo.png" type="image/x-icon">
+  <meta name="description" content="">
+  <link rel="canonical" href="https://www.nameagency.com">
+  <meta property="og:url" content="https://www.nameagency.com">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72.png">
+  <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57.png">
+</head>
+
+<body>
+  <!-- Navbar Menu  ---->
+  <section id="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">
+        <img src="images/webiz-logo.png" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="multiSender.html">BTU multiSender</a>
+
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+  <section class="banner">
+    <div class="container">
+    <div class="row">
+    <div class="row offset-1">
+      <p id="account" class="welcome pull-right"></p>
+      <p id="accountBalance" class="welcome pull-left"></p>
+    </div>
+    <div class="row offset-1">
+      <p id="totalSupply" class=" pull-right"></p>
+      <p id="tokenBalance" class="title pull-left"></p>
+    </div>
+    </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="promo-title">Mise en place d’un BTU Multisender qui optimise les frais (gas) d’envoi sur un ERC-20</p>
+          <p class="join-title">Projet final </p>
+          <a href="multiSender.html" class="link-play">
+            <img src="svg/play.svg" alt="" class="play-btn"/>
+          </a>
+        </div>
+        <div class="col-md-6">
+          <img src="svg/undraw_wallet_aym5.svg" alt="" class="img-fluid"/>
+        </div>
+      </div>
+    </div>
+    <img src="images/ground@-min.png" class="bottom-img" alt=""/>
+  </section>
+  <h3 class="title text-center">Comment transférer de nombreux jetons et économiser du gaz</h3>
+  <div>
+    <br/>
+
+  </div>
+  <div class="row offset-1">
+  <div class="col-md-5 testimonials">
+    <p class="feedback">
+    "nous examinons quantitativement les implémentations existantes et proposons une solution qui les améliore.
+    Étant donné que les jetons sont des projets à long terme, nous pouvons considérer les coûts de gaz pendant le déploiement comme négligeables par rapport aux coûts de gaz opérationnels. Plus encore, pour de nombreux contrats et en particulier les crowdsales avec émission de jetons retardée, les transferts de jetons représenteront une part importante des dépenses de l'opérateur."
+    </p>
+  </div>
+  <div class="col-md-5 testimonials">
+    <p class="feedback">
+"Nous considérerons cinq méthodes, dont trois sont les plus couramment utilisées dans la pratique, à savoir les fonctions de transfert mises en œuvre par Ethereum Solidity, Zeppelin Solutions et ConsenSys, qui sont accessibles au public sur GitHub. Les deux autres méthodes adoptent une approche par lots."
+    </p>
+  </div>
+</div>
+<div>
+<br/></div>
+
+</div>
+
+<div class="col-md-auto">
+  <button type="button" class="btn btn-primary title pull-left" name="button" onclick="App.runScript()">Exécuter le test</button>
+  <button type="button" class="btn btn-primary title pull-right" data-toggle="collapse" data-target="#events" id="eventsBtn" aria-expanded="false" aria-controls="events">Events</button>
+  <div><br/></div>
+</div>
+  <section class="title text-center">
+
+    <table id="tablePreview" class="table table-hover table-striped table-bordered table-center text-center highchart" data-graph-container-before="1" data-graph-type="column"width="100%" >
+    <tr>
+    <th>Implementation</th>
+    <th>Cumulative gas cost</th>
+    <th>Average gas cost per trx</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Ethereum Solidity</td>
+    <td id="eth">51668600</td>
+    <td id="ethAverage">51668.60</td>
+    </tr>
+    <tr>
+    <td>OpenZeppelin</td>
+    <td id="opZplin">51451600</td>
+    <td id="opZplinAverage">51451.60</td>
+    </tr>
+    <tr>
+    <td >ConsenSys</td>
+    <td id="cSys">51073600</td>
+    <td id="cSysAverage">51073.60</td>
+    </tr>
+    <tr>
+    <td>sendBatch 10</td>
+    <td id="batch10">32345376</td>
+    <td id="batchAverage10">32345.38</td>
+    </tr>
+    <tr>
+    <td>sendBatch 100</td>
+    <td id="batch100">30313536</td>
+    <td id="batchAverage100">30313.54</td>
+    </tr>
+    <tr>
+    <td>sendBatchCS 10</td>
+    <td id="batchCs10">26838316</td>
+    <td id="batchCsAverage10">26838.32</td>
+    </tr>
+    <tr>
+    <td>sendBatchCS 100</td>
+    <td id="batchCs100">24315166</td>
+    <td id="batchCsAverage100">24315.17</td>
+    </tr>
+    <tr>
+    <td>sendBatchCS 1000</td>
+    <td id="batchCs1000">24063235</td>
+    <td id="batchCsAverage1000">24063.24</td>
+    </tr>
+    </tbody>
+    </table>
+    <div>
+      <h4 class="title text-center">les events de Transfer</h4>
+      <div><br/></div>
+      <ul id="events" class="collapse list-group">
+    </div>
+
+  </section>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <!---  Testimonials Section  --->
+  <section id="testimonials">
+    <div class="container">
+      <h3 class="title text-center">Equipe</h3>
+      <div class="row offset-1">
+        <div class="col-md-5 testimonials">
+          <img src="./images/testimonials/mypic.jpg" alt="">
+          <p class="user-details"><b>Mohammed El-Idrissi</b><br>Inginieur</p>
+          <p class="feedback">"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          </p>
+        </div>
+        <div class="col-md-5 testimonials">
+          <p class="feedback">
+          </p>
+          <img src="./images/testimonials/testimonial-3.jpg" alt="">
+          <p class="user-details"><b>Mosaa</b><br></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer ------>
+  <section id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-box">
+          <img src="images/webiz-logo.png" alt="">
+          <h3>Une école au cœur de la blockchain</h3>
+          <p>Nous sommes passionné·e·s par la technologie, et nous travaillons avec des passionné·e·s.
+            Nos formations sont données et créées par des expert·e·s du domaine à l’écoute et pédagogues.
+          </p>
+          <p>Nous proposons actuellement le parcours « devenez développeur blockchain et smart contracts en 10 semaines
+            »
+            et depuis peu le parcours de « chef de projet blockchain ».</p>
+        </div>
+        <div class="col-md-4 footer-box">
+          <p id="contact"><b>Alyra L’école blockchain</b></p>
+          <p><i class="fa fa-map-marker"></i>24 rue des épinettes, Paris 75017</p>
+          <p><i class="fa fa-phone"></i>+33 075 548 49 23</p>
+          <p><i class="fa fa-envelope-o"></i>bonjour@alyra.fr</p>
+        </div>
+        <div class="col-md-4 footer-box">
+          <p><b>SUBSCRIBE NEWSLETTER</b></p>
+          <input type="email" class="form-control" placeholder="Your Email">
+          <button type="button" class="btn btn-primary" name="button">Subscribe</button>
+
+          <div id="social">
+            <p>Find Us On Social Media</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/ecolealyra/" class="svg-icons"><img src="svg/facebook-logo.svg"
+                  alt=""></a>
+              <a href="#" class="svg-icons"><img src="svg/instagram_.svg" alt=""></a>
+              <a href="https://twitter.com/alyraBlockchain?lang=fr" class="svg-icons"><img src="svg/twitter-logo.svg"
+                  alt=""></a>
+              <a href="#" class="svg-icons"><img src="svg/whatsapp.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <p class="copyright">Copyright © 2019.El-IDRISSI student de <a href="https://alyra.fr/">Alyra L’école
+              blockchain</a></p>
+        </div>
+        <div class="col-md-6 text-right">
+          <p class="copyright">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">Terms & Conditions</a>
+          </p>
+        </div>
+      </div>
+      <br />
+    </div>
+  </section>
+  <!--- Smooth Scroll js ---------->
+  <script type="text/javascript" src="js/smooth-scroll.js"></script>
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+  </script>
+  <!-- Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/app.js"></script>
+  <script src='js/bignumber.js'></script>
+  <script src="js/highcharts.js" type="text/javascript"></script>
+  <script src="js/jquery.highchartTable.js" type="text/javascript"></script>
+</body>
+
+</html>

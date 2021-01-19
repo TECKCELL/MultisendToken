@@ -1,0 +1,472 @@
+{
+  "contractName": "address_make_payable",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ingmedical16/04v/contracts/dev/address_make_payable.sol\":\"address_make_payable\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ingmedical16/04v/contracts/dev/address_make_payable.sol\":{\"keccak256\":\"0xbcdd3a0fcf63b47ca89359c522230d3b50f7ace6375611f02606659d35d319f3\",\"urls\":[\"bzz-raw://5f5f0571bf769784dd73e586139328b6f83a8b2c6a2939907412ea13ea5804de\",\"dweb:/ipfs/QmSnhx2PCzayHQjXVw9giRHAHrsNSAJQod6m1Jc7U2hcwp\"]}},\"version\":1}",
+  "bytecode": "0x60556023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea265627a7a72315820bcfccb7483450b7c4a329b5bc0f149c6cbf8a4d06f2988a9f93b7b57b520a5d864736f6c634300050c0032",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea265627a7a72315820bcfccb7483450b7c4a329b5bc0f149c6cbf8a4d06f2988a9f93b7b57b520a5d864736f6c634300050c0032",
+  "sourceMap": "133:149:22:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
+  "deployedSourceMap": "133:149:22:-;;;;;;;;",
+  "source": "pragma solidity 0.5.12;\n\n// We can define a library for explicitly converting ``address``\n// to ``address payable`` as a workaround.\nlibrary address_make_payable {\n   function make_payable(address x) internal pure returns (address payable) {\n      return address(uint160(x));\n   }\n}\n",
+  "sourcePath": "/home/ingmedical16/04v/contracts/dev/address_make_payable.sol",
+  "ast": {
+    "absolutePath": "/home/ingmedical16/04v/contracts/dev/address_make_payable.sol",
+    "exportedSymbols": {
+      "address_make_payable": [
+        3609
+      ]
+    },
+    "id": 3610,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3594,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:22"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 3609,
+        "linearizedBaseContracts": [
+          3609
+        ],
+        "name": "address_make_payable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 3607,
+              "nodeType": "Block",
+              "src": "240:40:22",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 3603,
+                            "name": "x",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3596,
+                            "src": "271:1:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 3602,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "263:7:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint160_$",
+                            "typeString": "type(uint160)"
+                          },
+                          "typeName": "uint160"
+                        },
+                        "id": 3604,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "263:10:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        }
+                      ],
+                      "id": 3601,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "255:7:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 3605,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "255:19:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "functionReturnParameters": 3600,
+                  "id": 3606,
+                  "nodeType": "Return",
+                  "src": "248:26:22"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3608,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "make_payable",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3597,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3596,
+                  "name": "x",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3608,
+                  "src": "189:9:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3595,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "189:7:22",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "188:11:22"
+            },
+            "returnParameters": {
+              "id": 3600,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3599,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3608,
+                  "src": "223:15:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3598,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "223:15:22",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "222:17:22"
+            },
+            "scope": 3609,
+            "src": "167:113:22",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3610,
+        "src": "133:149:22"
+      }
+    ],
+    "src": "0:283:22"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/ingmedical16/04v/contracts/dev/address_make_payable.sol",
+    "exportedSymbols": {
+      "address_make_payable": [
+        3609
+      ]
+    },
+    "id": 3610,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3594,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:22"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 3609,
+        "linearizedBaseContracts": [
+          3609
+        ],
+        "name": "address_make_payable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 3607,
+              "nodeType": "Block",
+              "src": "240:40:22",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 3603,
+                            "name": "x",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3596,
+                            "src": "271:1:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 3602,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "263:7:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint160_$",
+                            "typeString": "type(uint160)"
+                          },
+                          "typeName": "uint160"
+                        },
+                        "id": 3604,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "263:10:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        }
+                      ],
+                      "id": 3601,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "255:7:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": "address"
+                    },
+                    "id": 3605,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "255:19:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "functionReturnParameters": 3600,
+                  "id": 3606,
+                  "nodeType": "Return",
+                  "src": "248:26:22"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3608,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "make_payable",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3597,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3596,
+                  "name": "x",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3608,
+                  "src": "189:9:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3595,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "189:7:22",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "188:11:22"
+            },
+            "returnParameters": {
+              "id": 3600,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3599,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3608,
+                  "src": "223:15:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 3598,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "223:15:22",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "222:17:22"
+            },
+            "scope": 3609,
+            "src": "167:113:22",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3610,
+        "src": "133:149:22"
+      }
+    ],
+    "src": "0:283:22"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.19",
+  "updatedAt": "2020-01-05T17:15:31.394Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

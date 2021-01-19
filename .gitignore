@@ -1,0 +1,49 @@
+# Truffle
+build
+startrinkeby
+startNode
+
+# Node
+node_modules
+package-lock.json
+
+# Github Artefacts
+
+
+# Mac specific
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Ignore Idea files and folders
+#
+
+# User-specific stuff:
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+
+## File-based project format:
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+.idea/compiler.xml
+.idea/chainlist.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+
+# Environment variables
+.env

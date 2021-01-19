@@ -1,0 +1,652 @@
+{
+  "contractName": "EternalStorageProxyForStormMultisender",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "ProxyOwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "version",
+          "type": "string"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "Upgraded",
+      "type": "event"
+    },
+    {
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "implementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "proxyOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferProxyOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "version",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "upgradeTo",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "version",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "upgradeToAndCall",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "upgradeabilityOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"ProxyOwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"version\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"Upgraded\",\"type\":\"event\"},{\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"constant\":true,\"inputs\":[],\"name\":\"implementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"proxyOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferProxyOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"version\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"upgradeTo\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"version\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"upgradeToAndCall\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"upgradeabilityOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"This proxy holds the storage of the token contract and delegates every call to the current implementation set. Besides, it allows to upgrade the token's behaviour towards further implementations, and provides basic authorization control functionalities\",\"methods\":{\"implementation()\":{\"details\":\"Tells the address of the current implementation\",\"return\":\"address of the current implementation\"},\"proxyOwner()\":{\"details\":\"Tells the address of the proxy owner\",\"return\":\"the address of the proxy owner\"},\"transferProxyOwnership(address)\":{\"details\":\"Allows the current owner to transfer control of the contract to a newOwner.\",\"params\":{\"newOwner\":\"The address to transfer ownership to.\"}},\"upgradeTo(string,address)\":{\"details\":\"Allows the upgradeability owner to upgrade the current version of the proxy.\",\"params\":{\"implementation\":\"representing the address of the new implementation to be set.\",\"version\":\"representing the version name of the new implementation to be set.\"}},\"upgradeToAndCall(string,address,bytes)\":{\"details\":\"Allows the upgradeability owner to upgrade the current version of the proxy and call the new implementation to initialize whatever is needed through a low level call.\",\"params\":{\"data\":\"represents the msg.data to bet sent in the low level call. This parameter may include the function signature of the implementation to be called with the needed payload\",\"implementation\":\"representing the address of the new implementation to be set.\",\"version\":\"representing the version name of the new implementation to be set.\"}},\"upgradeabilityOwner()\":{\"details\":\"Tells the address of the owner\",\"return\":\"the address of the owner\"},\"version()\":{\"details\":\"Tells the version name of the current implementation\",\"return\":\"string representing the name of the current version\"}},\"title\":\"EternalStorageProxy\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/ingmedical16/04v/contracts/dev/EternalStorageProxyForStormMultisender.sol\":\"EternalStorageProxyForStormMultisender\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/ingmedical16/04v/contracts/dev/EternalStorage.sol\":{\"keccak256\":\"0xbbcd760767bc3fe71784b849a2e5efbf2c73c4810f3e8118e4dd08ea2abb6315\",\"urls\":[\"bzz-raw://092bedc6db2010a8f3c0b5401fc16ac9c6d993d38abbe46fc7b613976de306c1\",\"dweb:/ipfs/QmNx9rC6mAwyBgvF6ZWEfVsrL8cFV3xCiUwH2AzbU2aPE8\"]},\"/home/ingmedical16/04v/contracts/dev/EternalStorageProxyForStormMultisender.sol\":{\"keccak256\":\"0xeee97e81ae2d7a52284cf4a0110a06719035cbbf1b3f9edc97587280363c4fb4\",\"urls\":[\"bzz-raw://8b6d3ffde972d369a6ec2e4420a784c226ad9d61ece9e0215d8d7a99e2699dde\",\"dweb:/ipfs/QmdMgNaLiFveBdmxYix97p7JvRjMjcAT65uaUy6BKPjbzU\"]},\"/home/ingmedical16/04v/contracts/dev/OwnedUpgradeabilityProxy.sol\":{\"keccak256\":\"0xde48c3d474e8d9aae6d1d08badca7cb7957326609ec56b1b24316b857f72f09f\",\"urls\":[\"bzz-raw://3c820896f4ca404a1e92b18fdbdb01b044d352e990a106621f7e979ab1057710\",\"dweb:/ipfs/QmRqvydFg3Ef1Psouuqpf185pJUfSCobAKjMWwXPpemLBd\"]},\"/home/ingmedical16/04v/contracts/dev/Proxy.sol\":{\"keccak256\":\"0xa12d162a6b7e8a9d26aebe91673b1b9af5002d9ec141b16f41463706eb20aea6\",\"urls\":[\"bzz-raw://9becea9c1e60dc68e6bc3b0cd04d2cb19d90766aff002499af3923f206e6cc0c\",\"dweb:/ipfs/QmV5N1fQFmthyLp15pF1UeX163UMEAr4j8Xype2E78abea\"]},\"/home/ingmedical16/04v/contracts/dev/UpgradeabilityOwnerStorage.sol\":{\"keccak256\":\"0xed2128a52c4ae851eb9a718da62b1bb6d8e3d0842bc7d318bff87c5493211d09\",\"urls\":[\"bzz-raw://7b044fbdcde4824fb1ed67b36b20136e8d70e2a9962e2d95b175f0b8c9772b75\",\"dweb:/ipfs/QmU6ig9HSr38oNbMCpWfGYbLJzpctiGgXQGH7MCCvwntjc\"]},\"/home/ingmedical16/04v/contracts/dev/UpgradeabilityProxy.sol\":{\"keccak256\":\"0x15fe11448ba07bceb7ac07697db14d0db8ab7536b0e62391110bfd2d57a29af5\",\"urls\":[\"bzz-raw://e47a76eb3659d66241a51a046fd5876992751f62a982757c968b094b805fc90d\",\"dweb:/ipfs/QmbxmwvDNPtsxjpA37U26sJP5dYQDeCApznjA1sHvkNUgX\"]},\"/home/ingmedical16/04v/contracts/dev/UpgradeabilityStorage.sol\":{\"keccak256\":\"0x9a07252e85494abcf394d15b3585a94e9aad2c02f2f4bbd7b035fde4fa33b4c4\",\"urls\":[\"bzz-raw://2dcda70fe326bfd87df4978a02888f7adc33d337fdacf49d46a5190de438d173\",\"dweb:/ipfs/QmVftqLDAqJXH9ZENBNPCCRfdo43UPF7XczV4gQpsM9NHS\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516108c63803806108c68339818101604052602081101561003357600080fd5b505180610048816001600160e01b0361004f16565b5050610071565b600080546001600160a01b0319166001600160a01b0392909216919091179055565b610846806100806000396000f3fe6080604052600436106100705760003560e01c80635c60da1b1161004e5780635c60da1b1461026a5780636fde82021461027f578063958a41dd14610294578063f1739cae146103d257610070565b8063025313a2146100ef57806354fd4d50146101205780635a8b1a9f146101aa575b600061007a610405565b90506001600160a01b03811661008f57600080fd5b60606000368080601f016020809104026020016040519081016040528093929190818152602001838380828437600092018290525084519495509384935091505060208401855af43d604051816000823e8280156100eb578282f35b8282fd5b3480156100fb57600080fd5b50610104610415565b604080516001600160a01b039092168252519081900360200190f35b34801561012c57600080fd5b50610135610424565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561016f578181015183820152602001610157565b50505050905090810190601f16801561019c5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101b657600080fd5b50610268600480360360408110156101cd57600080fd5b8101906020810181356401000000008111156101e857600080fd5b8201836020820111156101fa57600080fd5b8035906020019184600183028401116401000000008311171561021c57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929550505090356001600160a01b031691506104b99050565b005b34801561027657600080fd5b50610104610405565b34801561028b57600080fd5b506101046104ec565b610268600480360360608110156102aa57600080fd5b8101906020810181356401000000008111156102c557600080fd5b8201836020820111156102d757600080fd5b803590602001918460018302840111640100000000831117156102f957600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092956001600160a01b0385351695909490935060408101925060200135905064010000000081111561035d57600080fd5b82018360208201111561036f57600080fd5b8035906020019184600183028401116401000000008311171561039157600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506104fb945050505050565b3480156103de57600080fd5b50610268600480360360208110156103f557600080fd5b50356001600160a01b03166105df565b6002546001600160a01b03165b90565b600061041f6104ec565b905090565b60018054604080516020601f600260001961010087891615020190951694909404938401819004810282018101909252828152606093909290918301828280156104af5780601f10610484576101008083540402835291602001916104af565b820191906000526020600020905b81548152906001019060200180831161049257829003601f168201915b5050505050905090565b6104c1610415565b6001600160a01b0316336001600160a01b0316146104de57600080fd5b6104e8828261066e565b5050565b6000546001600160a01b031690565b610503610415565b6001600160a01b0316336001600160a01b03161461052057600080fd5b61052a83836104b9565b6000826001600160a01b0316826040518082805190602001908083835b602083106105665780518252601f199092019160209182019101610547565b6001836020036101000a038019825116818451168082178552505050505050905001915050600060405180830381855af49150503d80600081146105c6576040519150601f19603f3d011682016040523d82523d6000602084013e6105cb565b606091505b50509050806105d957600080fd5b50505050565b6105e7610415565b6001600160a01b0316336001600160a01b03161461060457600080fd5b6001600160a01b03811661061757600080fd5b7f5a3e66efaa1e445ebd894728a69d6959842ea1e97bd79b892797106e270efcd9610640610415565b604080516001600160a01b03928316815291841660208301528051918290030190a161066b81610757565b50565b6002546001600160a01b038281169116141561068957600080fd5b815161069c906001906020850190610779565b50600280546001600160a01b0319166001600160a01b03831690811790915560408051602080825285518183015285517f8e05e0e35ff592971ca8b477d4285a33a61ded208d644042667b78693a472f5e938793928392918301919085019080838360005b83811015610719578181015183820152602001610701565b50505050905090810190601f1680156107465780820380516001836020036101000a031916815260200191505b509250505060405180910390a25050565b600080546001600160a01b0319166001600160a01b0392909216919091179055565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106107ba57805160ff19168380011785556107e7565b828001600101855582156107e7579182015b828111156107e75782518255916020019190600101906107cc565b506107f39291506107f7565b5090565b61041291905b808211156107f357600081556001016107fd56fea265627a7a7231582037bae9e149a9100346dd372a0f1afb6aee20eb9cfbdcbeaf7cd0e38270bbdb6e64736f6c634300050c0032",
+  "deployedBytecode": "0x6080604052600436106100705760003560e01c80635c60da1b1161004e5780635c60da1b1461026a5780636fde82021461027f578063958a41dd14610294578063f1739cae146103d257610070565b8063025313a2146100ef57806354fd4d50146101205780635a8b1a9f146101aa575b600061007a610405565b90506001600160a01b03811661008f57600080fd5b60606000368080601f016020809104026020016040519081016040528093929190818152602001838380828437600092018290525084519495509384935091505060208401855af43d604051816000823e8280156100eb578282f35b8282fd5b3480156100fb57600080fd5b50610104610415565b604080516001600160a01b039092168252519081900360200190f35b34801561012c57600080fd5b50610135610424565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561016f578181015183820152602001610157565b50505050905090810190601f16801561019c5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101b657600080fd5b50610268600480360360408110156101cd57600080fd5b8101906020810181356401000000008111156101e857600080fd5b8201836020820111156101fa57600080fd5b8035906020019184600183028401116401000000008311171561021c57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929550505090356001600160a01b031691506104b99050565b005b34801561027657600080fd5b50610104610405565b34801561028b57600080fd5b506101046104ec565b610268600480360360608110156102aa57600080fd5b8101906020810181356401000000008111156102c557600080fd5b8201836020820111156102d757600080fd5b803590602001918460018302840111640100000000831117156102f957600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092956001600160a01b0385351695909490935060408101925060200135905064010000000081111561035d57600080fd5b82018360208201111561036f57600080fd5b8035906020019184600183028401116401000000008311171561039157600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506104fb945050505050565b3480156103de57600080fd5b50610268600480360360208110156103f557600080fd5b50356001600160a01b03166105df565b6002546001600160a01b03165b90565b600061041f6104ec565b905090565b60018054604080516020601f600260001961010087891615020190951694909404938401819004810282018101909252828152606093909290918301828280156104af5780601f10610484576101008083540402835291602001916104af565b820191906000526020600020905b81548152906001019060200180831161049257829003601f168201915b5050505050905090565b6104c1610415565b6001600160a01b0316336001600160a01b0316146104de57600080fd5b6104e8828261066e565b5050565b6000546001600160a01b031690565b610503610415565b6001600160a01b0316336001600160a01b03161461052057600080fd5b61052a83836104b9565b6000826001600160a01b0316826040518082805190602001908083835b602083106105665780518252601f199092019160209182019101610547565b6001836020036101000a038019825116818451168082178552505050505050905001915050600060405180830381855af49150503d80600081146105c6576040519150601f19603f3d011682016040523d82523d6000602084013e6105cb565b606091505b50509050806105d957600080fd5b50505050565b6105e7610415565b6001600160a01b0316336001600160a01b03161461060457600080fd5b6001600160a01b03811661061757600080fd5b7f5a3e66efaa1e445ebd894728a69d6959842ea1e97bd79b892797106e270efcd9610640610415565b604080516001600160a01b03928316815291841660208301528051918290030190a161066b81610757565b50565b6002546001600160a01b038281169116141561068957600080fd5b815161069c906001906020850190610779565b50600280546001600160a01b0319166001600160a01b03831690811790915560408051602080825285518183015285517f8e05e0e35ff592971ca8b477d4285a33a61ded208d644042667b78693a472f5e938793928392918301919085019080838360005b83811015610719578181015183820152602001610701565b50505050905090810190601f1680156107465780820380516001836020036101000a031916815260200191505b509250505060405180910390a25050565b600080546001600160a01b0319166001600160a01b0392909216919091179055565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106107ba57805160ff19168380011785556107e7565b828001600101855582156107e7579182015b828111156107e75782518255916020019190600101906107cc565b506107f39291506107f7565b5090565b61041291905b808211156107f357600081556001016107fd56fea265627a7a7231582037bae9e149a9100346dd372a0f1afb6aee20eb9cfbdcbeaf7cd0e38270bbdb6e64736f6c634300050c0032",
+  "sourceMap": "404:172:10:-;;;503:70;8:9:-1;5:2;;;30:1;27;20:12;5:2;503:70:10;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;503:70:10;;789:30:14;503:70:10;-1:-1:-1;;;;;789:22:14;:30;:::i;:::-;744:82;503:70:10;404:172;;508:135:19;591:20;:45;;-1:-1:-1;;;;;;591:45:19;-1:-1:-1;;;;;591:45:19;;;;;;;;;;508:135::o;404:172:10:-;;;;;;;",
+  "deployedSourceMap": "404:172:10:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;372:13:16;388:16;:14;:16::i;:::-;372:32;-1:-1:-1;;;;;;422:19:16;;414:28;;;;;;452:17;472:8;;452:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;-1:-1;570:11:16;;452:28;;-1:-1:-1;99:1;;;-1:-1;570:11:16;-1:-1:-1;;563:4:16;553:15;;546:5;541:3;528:60;613:14;658:4;652:11;699:4;696:1;691:3;676:28;725:6;744:28;;;;807:4;802:3;795:17;744:28;765:4;760:3;753:17;1115:97:14;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1115:97:14;;;:::i;:::-;;;;-1:-1:-1;;;;;1115:97:14;;;;;;;;;;;;;;510:87:21;;8:9:-1;5:2;;;30:1;27;20:12;5:2;510:87:21;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;510:87:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1893:140:14;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1893:140:14;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1893:140:14;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;1893:140:14;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;1893:140:14;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;1893:140:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;1893:140:14;;-1:-1:-1;;;1893:140:14;;-1:-1:-1;;;;;1893:140:14;;-1:-1:-1;1893:140:14;;-1:-1:-1;1893:140:14:i;:::-;;729:95:21;;8:9:-1;5:2;;;30:1;27;20:12;5:2;729:95:21;;;:::i;341:105:19:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;341:105:19;;;:::i;2608:325:14:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2608:325:14;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;2608:325:14;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;2608:325:14;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;2608:325:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;2608:325:14;;-1:-1:-1;;;;;2608:325:14;;;;;;;;-1:-1:-1;2608:325:14;;;;-1:-1:-1;2608:325:14;;;;-1:-1:-1;21:11;5:28;;2:2;;;46:1;43;36:12;2:2;2608:325:14;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;2608:325:14;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;2608:325:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;2608:325:14;;-1:-1:-1;2608:325:14;;-1:-1:-1;;;;;2608:325:14:i;1380:226::-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1380:226:14;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1380:226:14;-1:-1:-1;;;;;1380:226:14;;:::i;729:95:21:-;802:15;;-1:-1:-1;;;;;802:15:21;729:95;;:::o;1115:97:14:-;1158:7;1184:21;:19;:21::i;:::-;1177:28;;1115:97;:::o;510:87:21:-;582:8;575:15;;;;;;;;-1:-1:-1;;575:15:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;550:13;;575:15;;582:8;;575:15;;582:8;575:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;510:87;:::o;1893:140:14:-;970:12;:10;:12::i;:::-;-1:-1:-1;;;;;956:26:14;:10;-1:-1:-1;;;;;956:26:14;;948:35;;;;;;1991;2002:7;2011:14;1991:10;:35::i;:::-;1893:140;;:::o;341:105:19:-;393:7;419:20;-1:-1:-1;;;;;419:20:19;341:105;:::o;2608:325:14:-;970:12;:10;:12::i;:::-;-1:-1:-1;;;;;956:26:14;:10;-1:-1:-1;;;;;956:26:14;;948:35;;;;;;2740:34;2750:7;2759:14;2740:9;:34::i;:::-;2849:12;2867:14;-1:-1:-1;;;;;2867:27:14;2895:4;2867:33;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;36:153;;176:10;;164:23;;-1:-1;;139:12;;;;98:2;89:12;;;;114;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;2867:33:14;;;;;;;;;;;;;;;;;;;;;;;14:1:-1;21;16:31;;;;75:4;69:11;64:16;;144:4;140:9;133:4;115:16;111:27;107:43;104:1;100:51;94:4;87:65;169:16;166:1;159:27;225:16;222:1;215:4;212:1;208:12;193:49;7:242;;16:31;36:4;31:9;;7:242;;2848:52:14;;;2918:7;2910:16;;;;;;993:1;2608:325;;;:::o;1380:226::-;970:12;:10;:12::i;:::-;-1:-1:-1;;;;;956:26:14;:10;-1:-1:-1;;;;;956:26:14;;948:35;;;;;;-1:-1:-1;;;;;1470:22:14;;1462:31;;;;;;1508:49;1534:12;:10;:12::i;:::-;1508:49;;;-1:-1:-1;;;;;1508:49:14;;;;;;;;;;;;;;;;;;;;;1567:32;1590:8;1567:22;:32::i;:::-;1380:226;:::o;868:253:20:-;962:15;;-1:-1:-1;;;;;962:33:20;;;:15;;:33;;954:42;;;;;;1006:18;;;;:8;;:18;;;;;:::i;:::-;-1:-1:-1;1034:15:20;:32;;-1:-1:-1;;;;;;1034:32:20;-1:-1:-1;;;;;1034:32:20;;;;;;;;1081:33;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;1081:33:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;868:253;;:::o;508:135:19:-;591:20;:45;;-1:-1:-1;;;;;;591:45:19;-1:-1:-1;;;;;591:45:19;;;;;;;;;;508:135::o;404:172:10:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;404:172:10;;;-1:-1:-1;404:172:10;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;",
+  "source": "pragma solidity 0.5.12;\n\nimport \"./EternalStorage.sol\";\nimport \"./OwnedUpgradeabilityProxy.sol\";\n\n\n/**\n * @title EternalStorageProxy\n * @dev This proxy holds the storage of the token contract and delegates every call to the current implementation set.\n * Besides, it allows to upgrade the token's behaviour towards further implementations, and provides basic\n * authorization control functionalities\n */\ncontract EternalStorageProxyForStormMultisender is OwnedUpgradeabilityProxy, EternalStorage {\n\n    constructor(address _owner) public OwnedUpgradeabilityProxy(_owner) {}\n\n}\n",
+  "sourcePath": "/home/ingmedical16/04v/contracts/dev/EternalStorageProxyForStormMultisender.sol",
+  "ast": {
+    "absolutePath": "/home/ingmedical16/04v/contracts/dev/EternalStorageProxyForStormMultisender.sol",
+    "exportedSymbols": {
+      "EternalStorageProxyForStormMultisender": [
+        2774
+      ]
+    },
+    "id": 2775,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2758,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:10"
+      },
+      {
+        "absolutePath": "/home/ingmedical16/04v/contracts/dev/EternalStorage.sol",
+        "file": "./EternalStorage.sol",
+        "id": 2759,
+        "nodeType": "ImportDirective",
+        "scope": 2775,
+        "sourceUnit": 2757,
+        "src": "25:30:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/ingmedical16/04v/contracts/dev/OwnedUpgradeabilityProxy.sol",
+        "file": "./OwnedUpgradeabilityProxy.sol",
+        "id": 2760,
+        "nodeType": "ImportDirective",
+        "scope": 2775,
+        "sourceUnit": 3118,
+        "src": "56:40:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2761,
+              "name": "OwnedUpgradeabilityProxy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3117,
+              "src": "455:24:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_OwnedUpgradeabilityProxy_$3117",
+                "typeString": "contract OwnedUpgradeabilityProxy"
+              }
+            },
+            "id": 2762,
+            "nodeType": "InheritanceSpecifier",
+            "src": "455:24:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2763,
+              "name": "EternalStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2756,
+              "src": "481:14:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_EternalStorage_$2756",
+                "typeString": "contract EternalStorage"
+              }
+            },
+            "id": 2764,
+            "nodeType": "InheritanceSpecifier",
+            "src": "481:14:10"
+          }
+        ],
+        "contractDependencies": [
+          2756,
+          3117,
+          3160,
+          3527,
+          3569,
+          3592
+        ],
+        "contractKind": "contract",
+        "documentation": "@title EternalStorageProxy\n@dev This proxy holds the storage of the token contract and delegates every call to the current implementation set.\nBesides, it allows to upgrade the token's behaviour towards further implementations, and provides basic\nauthorization control functionalities",
+        "fullyImplemented": true,
+        "id": 2774,
+        "linearizedBaseContracts": [
+          2774,
+          2756,
+          3117,
+          3569,
+          3592,
+          3160,
+          3527
+        ],
+        "name": "EternalStorageProxyForStormMultisender",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 2772,
+              "nodeType": "Block",
+              "src": "571:2:10",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 2773,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 2769,
+                    "name": "_owner",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 2766,
+                    "src": "563:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 2770,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2768,
+                  "name": "OwnedUpgradeabilityProxy",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 3117,
+                  "src": "538:24:10",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_OwnedUpgradeabilityProxy_$3117_$",
+                    "typeString": "type(contract OwnedUpgradeabilityProxy)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "538:32:10"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2767,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2766,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2773,
+                  "src": "515:14:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2765,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "515:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "514:16:10"
+            },
+            "returnParameters": {
+              "id": 2771,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "571:0:10"
+            },
+            "scope": 2774,
+            "src": "503:70:10",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2775,
+        "src": "404:172:10"
+      }
+    ],
+    "src": "0:577:10"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/ingmedical16/04v/contracts/dev/EternalStorageProxyForStormMultisender.sol",
+    "exportedSymbols": {
+      "EternalStorageProxyForStormMultisender": [
+        2774
+      ]
+    },
+    "id": 2775,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2758,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:10"
+      },
+      {
+        "absolutePath": "/home/ingmedical16/04v/contracts/dev/EternalStorage.sol",
+        "file": "./EternalStorage.sol",
+        "id": 2759,
+        "nodeType": "ImportDirective",
+        "scope": 2775,
+        "sourceUnit": 2757,
+        "src": "25:30:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/ingmedical16/04v/contracts/dev/OwnedUpgradeabilityProxy.sol",
+        "file": "./OwnedUpgradeabilityProxy.sol",
+        "id": 2760,
+        "nodeType": "ImportDirective",
+        "scope": 2775,
+        "sourceUnit": 3118,
+        "src": "56:40:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2761,
+              "name": "OwnedUpgradeabilityProxy",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3117,
+              "src": "455:24:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_OwnedUpgradeabilityProxy_$3117",
+                "typeString": "contract OwnedUpgradeabilityProxy"
+              }
+            },
+            "id": 2762,
+            "nodeType": "InheritanceSpecifier",
+            "src": "455:24:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2763,
+              "name": "EternalStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2756,
+              "src": "481:14:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_EternalStorage_$2756",
+                "typeString": "contract EternalStorage"
+              }
+            },
+            "id": 2764,
+            "nodeType": "InheritanceSpecifier",
+            "src": "481:14:10"
+          }
+        ],
+        "contractDependencies": [
+          2756,
+          3117,
+          3160,
+          3527,
+          3569,
+          3592
+        ],
+        "contractKind": "contract",
+        "documentation": "@title EternalStorageProxy\n@dev This proxy holds the storage of the token contract and delegates every call to the current implementation set.\nBesides, it allows to upgrade the token's behaviour towards further implementations, and provides basic\nauthorization control functionalities",
+        "fullyImplemented": true,
+        "id": 2774,
+        "linearizedBaseContracts": [
+          2774,
+          2756,
+          3117,
+          3569,
+          3592,
+          3160,
+          3527
+        ],
+        "name": "EternalStorageProxyForStormMultisender",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 2772,
+              "nodeType": "Block",
+              "src": "571:2:10",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 2773,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 2769,
+                    "name": "_owner",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 2766,
+                    "src": "563:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 2770,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2768,
+                  "name": "OwnedUpgradeabilityProxy",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 3117,
+                  "src": "538:24:10",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_OwnedUpgradeabilityProxy_$3117_$",
+                    "typeString": "type(contract OwnedUpgradeabilityProxy)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "538:32:10"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2767,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2766,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2773,
+                  "src": "515:14:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2765,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "515:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "514:16:10"
+            },
+            "returnParameters": {
+              "id": 2771,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "571:0:10"
+            },
+            "scope": 2774,
+            "src": "503:70:10",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2775,
+        "src": "404:172:10"
+      }
+    ],
+    "src": "0:577:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.19",
+  "updatedAt": "2020-01-05T17:15:31.389Z",
+  "devdoc": {
+    "details": "This proxy holds the storage of the token contract and delegates every call to the current implementation set. Besides, it allows to upgrade the token's behaviour towards further implementations, and provides basic authorization control functionalities",
+    "methods": {
+      "implementation()": {
+        "details": "Tells the address of the current implementation",
+        "return": "address of the current implementation"
+      },
+      "proxyOwner()": {
+        "details": "Tells the address of the proxy owner",
+        "return": "the address of the proxy owner"
+      },
+      "transferProxyOwnership(address)": {
+        "details": "Allows the current owner to transfer control of the contract to a newOwner.",
+        "params": {
+          "newOwner": "The address to transfer ownership to."
+        }
+      },
+      "upgradeTo(string,address)": {
+        "details": "Allows the upgradeability owner to upgrade the current version of the proxy.",
+        "params": {
+          "implementation": "representing the address of the new implementation to be set.",
+          "version": "representing the version name of the new implementation to be set."
+        }
+      },
+      "upgradeToAndCall(string,address,bytes)": {
+        "details": "Allows the upgradeability owner to upgrade the current version of the proxy and call the new implementation to initialize whatever is needed through a low level call.",
+        "params": {
+          "data": "represents the msg.data to bet sent in the low level call. This parameter may include the function signature of the implementation to be called with the needed payload",
+          "implementation": "representing the address of the new implementation to be set.",
+          "version": "representing the version name of the new implementation to be set."
+        }
+      },
+      "upgradeabilityOwner()": {
+        "details": "Tells the address of the owner",
+        "return": "the address of the owner"
+      },
+      "version()": {
+        "details": "Tells the version name of the current implementation",
+        "return": "string representing the name of the current version"
+      }
+    },
+    "title": "EternalStorageProxy"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
