@@ -1,4 +1,4 @@
-# btuMultieSender Dapp : projet finale au seine Alyra - L'école Blockchain
+# btuMultieSender Dapp : projet finale au sein Alyra - L'école Blockchain
 Mise en place d’un BTU Multisender qui optimise les frais (gas) d’envoi sur un ERC-20
 
 ## Problématique :
